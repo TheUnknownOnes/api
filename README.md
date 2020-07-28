@@ -25,15 +25,15 @@
 **Optional parameters:**
 - `from_format`
   - Type: string
-  - Content: defines, how the output of `from_datetime` should be formated ([read this for possible values](https://www.php.net/manual/en/function.date.php))
+  - Content: defines, how the output of `from_datetime` should be formated ([read this for possible values](https://www.php.net/manual/en/datetime.format.php))
   - Default: `Y.m.d H:i:s (T)`
 - `to_format`
   - Type: string
-  - Content: defines, how the output of `to_datetime` should be formated ([read this for possible values](https://www.php.net/manual/en/function.date.php))
+  - Content: defines, how the output of `to_datetime` should be formated ([read this for possible values](https://www.php.net/manual/en/datetime.format.php))
   - Default: `Y.m.d H:i:s (T)`
 - `modify`
   - Type: string
-  - Content: if this param is supplied, the modifier will be applied to `from_datetime` and `to_datetime` and the resulting values will be returned additionally
+  - Content: if this param is supplied, the modifier will be applied to `from_datetime` and `to_datetime` and the resulting values will be returned additionally ([read this for possible values](https://www.php.net/manual/en/datetime.formats.relative.php))
   - Default: `(empty)`
   
 **Returns:**
@@ -57,5 +57,41 @@ https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:
   "to": {
     "datetime": "2020.07.27 13:35:00 (UTC)"
   }
+}
+```
+
+https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:35&from_timezone=Europe/Berlin&to_timezone=UTC&from_format=U&to_format=r
+```json
+{
+  "result": "ok",
+  "from": {
+    "datetime": "1595856900"
+  },
+  "to": {
+    "datetime": "Mon, 27 Jul 2020 13:35:00 +0000"
+  }
+}
+```
+
+https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:35&from_timezone=Europe/Berlin&to_timezone=UTC&from_format=U&to_format=r&modify=+1%20week
+```json
+{
+  "result": "ok",
+  "from": {
+    "datetime": "1595856900",
+    "datetime_modified": "1596461700"
+  },
+  "to": {
+    "datetime": "Mon, 27 Jul 2020 13:35:00 +0000",
+    "datetime_modified": "Mon, 03 Aug 2020 13:35:00 +0000"
+  }
+}
+```
+
+https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:&from_timezone=Europe/Berlin&to_timezone=UTC
+```json
+{
+  "result": "error",
+  "message": "Can not parse datetime '27.7.2020 15:'."
 }
 ```
