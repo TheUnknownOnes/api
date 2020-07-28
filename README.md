@@ -46,7 +46,7 @@
 
 **Examples:**
 
-https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:35&from_timezone=Europe/Berlin&to_timezone=UTC
+convertdatetime.php?`from_datetime`=27.7.2020 15:35&`from_timezone`=Europe/Berlin&`to_timezone`=UTC
 
 ```json
 {
@@ -60,7 +60,7 @@ https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:
 }
 ```
 
-https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:35&from_timezone=Europe/Berlin&to_timezone=UTC&from_format=U&to_format=r
+convertdatetime.php?`from_datetime`=27.7.2020 15:35&`from_timezone`=Europe/Berlin&`to_timezone`=UTC&`from_format`=U&`to_format`=r
 ```json
 {
   "result": "ok",
@@ -73,7 +73,7 @@ https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:
 }
 ```
 
-https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:35&from_timezone=Europe/Berlin&to_timezone=UTC&from_format=U&to_format=r&modify=+1%20week
+convertdatetime.php?`from_datetime`=27.7.2020 15:35&`from_timezone`=Europe/Berlin&`to_timezone`=UTC&`from_format`=U&`to_format=r`&`modify`=+1 week
 ```json
 {
   "result": "ok",
@@ -88,7 +88,7 @@ https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:
 }
 ```
 
-https://api.theunknownones.net/convertdatetime.php?from_datetime=27.7.2020%2015:&from_timezone=Europe/Berlin&to_timezone=UTC
+convertdatetime.php?`from_datetime`=27.7.2020 15:&`from_timezone`=Europe/Berlin&`to_timezone`=UTC
 ```json
 {
   "result": "error",
